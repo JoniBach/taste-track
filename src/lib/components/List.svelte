@@ -1,5 +1,9 @@
 <script>
     // Import the JSON data
+
+    /**
+     * @type {any[]}
+     */
     const colorData = [];
 
     const radius = 150;
@@ -7,6 +11,12 @@
     const centerX = 150;
     const centerY = 150;
 
+    /**
+     * @param {number} centerX
+     * @param {number} centerY
+     * @param {number} radius
+     * @param {number} angleInDegrees
+     */
     function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
         const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
         return {
@@ -15,6 +25,13 @@
         };
     }
 
+    /**
+     * @param {number} x
+     * @param {number} y
+     * @param {number} radius
+     * @param {number} startAngle
+     * @param {number} endAngle
+     */
     function describeArc(x, y, radius, startAngle, endAngle) {
         const start = polarToCartesian(x, y, radius, endAngle);
         const end = polarToCartesian(x, y, radius, startAngle);
